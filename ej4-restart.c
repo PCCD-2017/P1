@@ -8,6 +8,7 @@
 #include <signal.h>
 #include <string.h>
 
+
 void termination_handler(int);
 
 int fin = 0;
