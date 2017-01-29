@@ -1,32 +1,30 @@
 /*
  * Ejercicio 6
  */
+
 #include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
 
-const char *PIDAscensor = 0;
-
 int main(int argc, char* argv[]){
-    int entrada = 0;
-    printf("Introduzca el PID del proceso Ascensor.");
-    scanf("%d", &PIDAscensor);
-    while(entrada != 3 ){
+    int eleccion = 0;
+    while(eleccion != 3 ){
+        system("clear");
         printf("Introduzca una orden para el pulsador.");
         printf("\n\t1 : Subir.\n\t2 : Bajar.\n\t3 : Salir.\n");
-        scanf("%d", &entrada);
-        switch(entrada){
+        fscanf(stdin, "%d", &eleccion);
+        switch(eleccion){
             case 1:
-                printf("Ha seleccionado subir.");
-                kill(atoi(PIDAscensor), SIGUSR1);
+                printf("Ha seleccionado subir.\n\n");
+                kill(atoi(argv[1]), SIGUSR1);
                 break;
             case 2:
-                printf("Ha seleccionado bajar.");
-                kill(atoi(PIDAscensor), SIGUSR2);
+                printf("Ha seleccionado bajar.\n\n");
+                kill(atoi(argv[1]), SIGUSR2);
                 break;
             case 3:
                 printf("Ha seleccionado salir. Adiós.");
-                kill(atoi(PIDAscensor), SIGKILL);
+                kill(atoi(argv[1]), SIGKILL);
                 break;
             default:
                 printf("Orden no válida.");
