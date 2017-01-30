@@ -10,9 +10,9 @@ add_executable(ej3 ej3.c)
 add_executable(ej4-restart ej4-restart.c)
 add_executable(ej4-resethand ej4-resethand.c)
 add_executable(ej5 ej5.c)
-add_executable(ej5mod ej5-mod.c)
-add_executable(ej6 ej6.c)
-add_executable(ej7 ej7.c)
+add_executable(ej5-mod.c)
+add_executable(ej6.c)
+add_executable(ej7.c)
 
 
 #foreach( testsourcefile ${APP_SOURCES} )
